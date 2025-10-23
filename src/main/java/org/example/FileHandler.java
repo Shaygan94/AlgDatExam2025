@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileHandler {
-    public List<Float> getDataSet() {
+    public float[] getDataSet() {
         ObjectMapper objectMapper = new ObjectMapper();
         List<Float> desiredValues = new ArrayList<>();
         try {
@@ -40,10 +40,16 @@ public class FileHandler {
             }
 
             // Print the extracted values
-            desiredValues.forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return desiredValues;
+
+        // Convert the List<Float> to a float[] array
+        float[] resultArray = new float[desiredValues.size()];
+        for (int i = 0; i < desiredValues.size(); i++) {
+            resultArray[i] = desiredValues.get(i);
+        }
+
+        return resultArray;
     }
 }
