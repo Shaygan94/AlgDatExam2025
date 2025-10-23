@@ -57,10 +57,10 @@ public class FileHandler {
         int index = 0;
         for (Float value : uniqueValues) {
             uniqueArray[index++] = value;
+        }
 
-            for (int i = 0; i < desiredValues.size(); i++) {
-                resultArray[i] = desiredValues.get(i);
-            }
+        for (int i = 0; i < desiredValues.size(); i++) {
+            resultArray[i] = desiredValues.get(i);
         }
         return uniqueArray;
     }

@@ -28,6 +28,15 @@ public class Main {
         InsertionSort.insertionSort(wineDataSet);
         TimeCounter.stop();
 
+        //MergeSort optimized version
+        TimeCounter.start();
+        MergeSort.start();
+        TimeCounter.stop();
 
+        //QuickSort optimized version
+        TimeCounter.start();
+        System.out.println("QuickSort: " + Arrays.toString(QuickSort.quickSort(wineDataSet, 0, wineDataSet.length - 1)));
+        TimeCounter.stop();
     }
+
 }
