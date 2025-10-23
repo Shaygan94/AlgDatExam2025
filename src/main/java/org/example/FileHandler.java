@@ -8,22 +8,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileHandler {
-    public void getDataSet() {
+    public List<Float> getDataSet() {
         ObjectMapper objectMapper = new ObjectMapper();
+        List<Float> desiredValues = new ArrayList<>();
         try {
             // Use the class loader to get the file from the resources folder
             InputStream inputStream = FileHandler.class.getClassLoader().getResourceAsStream("whiteRedWines.json");
 
             if (inputStream == null) {
                 System.out.println("File not found in resources.");
-                return;
+                return null;
             }
 
             // Read the JSON file into a JsonNode
             JsonNode rootNode = objectMapper.readTree(inputStream);
 
             // Create a list to store the desired variable values
-            List<String> desiredValues = new ArrayList<>();
+
 
             // Assuming the JSON is an array of objects
             if (rootNode.isArray()) {
@@ -33,7 +34,7 @@ public class FileHandler {
 
                     if (desiredVariableNode != null) {
                         // Add the value to the list
-                        desiredValues.add(desiredVariableNode.asText());
+                        desiredValues.add(desiredVariableNode.floatValue());
                     }
                 }
             }
@@ -43,5 +44,6 @@ public class FileHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return desiredValues;
     }
 }
