@@ -10,18 +10,17 @@ public class Main {
         float[] wineDataSet = fileHandler.getDataSet();
 
         //Original Array
-        TimeCounter.start();
-        System.out.println("Original array:"+ Arrays.toString(wineDataSet));
-        TimeCounter.stop();
+        System.out.println("Original array:"+ Arrays.toString(fileHandler.getDataSet()));
+        System.out.println("");
 
         //Bubblesort non optimized version
         TimeCounter.start();
-        BubbleSort.bubbleSortNonOptimized(wineDataSet);
+        BubbleSort.bubbleSortNonOptimized(fileHandler.getDataSet());
         TimeCounter.stop();
 
         //Bubblesort optimized version
         TimeCounter.start();
-        BubbleSort.bubbleSortOptimized(wineDataSet);
+        BubbleSort.bubbleSortOptimized(fileHandler.getDataSet());
         TimeCounter.stop();
     }
 }

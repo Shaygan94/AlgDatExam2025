@@ -6,7 +6,7 @@ public class BubbleSort {
 
     public static void bubbleSortNonOptimized(float[] wineDataSet) {
         float temp;
-        float wineList[] = wineDataSet;
+        float wineList[] = Arrays.copyOf(wineDataSet, wineDataSet.length);
         for (int i = 0; i < wineList.length - 1; i++) {
             for (int j = 0; j < wineList.length - i - 1; j++) {
 
@@ -22,7 +22,7 @@ public class BubbleSort {
 
     public static void bubbleSortOptimized(float[] wineDataSet) {
         float temp;
-        float wineList[] = wineDataSet;
+        float wineList[] = Arrays.copyOf(wineDataSet, wineDataSet.length);
         boolean swapped;
         for (int i = 0; i < wineList.length - 1; i++) {
             swapped = false;
@@ -35,6 +35,7 @@ public class BubbleSort {
                     swapped = true;
                 }
             }
+
             if(swapped == false){
                 break;
             }
