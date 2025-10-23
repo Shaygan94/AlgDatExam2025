@@ -61,7 +61,6 @@ public class FileHandler {
             for (int i = 0; i < desiredValues.size(); i++) {
                 resultArray[i] = desiredValues.get(i);
             }
-
         }
         return uniqueArray;
     }
