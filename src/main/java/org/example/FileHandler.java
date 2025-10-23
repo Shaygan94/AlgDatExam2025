@@ -2,15 +2,19 @@ package org.example;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class FileHandler {
     public float[] getDataSet() {
         ObjectMapper objectMapper = new ObjectMapper();
         List<Float> desiredValues = new ArrayList<>();
+        Set<Float> uniqueValues = new HashSet<>();
         try {
             // Use the class loader to get the file from the resources folder
             InputStream inputStream = FileHandler.class.getClassLoader().getResourceAsStream("whiteRedWines.json");
@@ -35,6 +39,7 @@ public class FileHandler {
                     if (desiredVariableNode != null) {
                         // Add the value to the list
                         desiredValues.add(desiredVariableNode.floatValue());
+                        uniqueValues.add(desiredVariableNode.floatValue());
                     }
                 }
             }
@@ -46,10 +51,18 @@ public class FileHandler {
 
         // Convert the List<Float> to a float[] array
         float[] resultArray = new float[desiredValues.size()];
-        for (int i = 0; i < desiredValues.size(); i++) {
-            resultArray[i] = desiredValues.get(i);
-        }
+        float[] uniqueArray = new float[uniqueValues.size()];
 
-        return resultArray;
+        // Iterate over the Set and add elements to the array
+        int index = 0;
+        for (Float value : uniqueValues) {
+            uniqueArray[index++] = value;
+
+            for (int i = 0; i < desiredValues.size(); i++) {
+                resultArray[i] = desiredValues.get(i);
+            }
+
+        }
+        return uniqueArray;
     }
 }

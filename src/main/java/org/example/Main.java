@@ -15,12 +15,19 @@ public class Main {
 
         //Bubblesort non optimized version
         TimeCounter.start();
-        BubbleSort.bubbleSortNonOptimized(fileHandler.getDataSet());
+        BubbleSort.bubbleSortNonOptimized(wineDataSet);
         TimeCounter.stop();
 
         //Bubblesort optimized version
         TimeCounter.start();
-        BubbleSort.bubbleSortOptimized(fileHandler.getDataSet());
+        BubbleSort.bubbleSortOptimized(wineDataSet);
         TimeCounter.stop();
+
+        //InsertionSort optimized version
+        TimeCounter.start();
+        InsertionSort.insertionSort(wineDataSet);
+        TimeCounter.stop();
+
+
     }
 }
