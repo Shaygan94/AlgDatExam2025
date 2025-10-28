@@ -62,13 +62,20 @@ public class Main {
         //QuickSort version
         TimeCounter.start();
         System.out.println("QuickSort First element with dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickFirst, 0, wineDataSetQuickFirst.length - 1, "first")));
+        System.out.println(QuickSort.getComparisonCount());
+        QuickSort.setComparisonCount(0);
         TimeCounter.stop();
 
         TimeCounter.start();
         System.out.println("QuickSort Last element with dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickLast, 0, wineDataSetQuickLast.length - 1, "last")));
+        System.out.println(QuickSort.getComparisonCount());
+        QuickSort.setComparisonCount(0);
         TimeCounter.stop();
+
         TimeCounter.start();
         System.out.println("QuickSort Random element with dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickRandom, 0, wineDataSetQuickRandom.length - 1, "random")));
+        System.out.println(QuickSort.getComparisonCount());
+        QuickSort.setComparisonCount(0);
         TimeCounter.stop();
 
         System.out.println("///////////////////////////////////////////////////");
@@ -115,14 +122,20 @@ public class Main {
         //QuickSort optimized version
         TimeCounter.start();
         System.out.println("QuickSort First element without dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickFirstUnique, 0, wineDataSetQuickFirstUnique.length - 1, "first")));
+        System.out.println(QuickSort.getComparisonCount());
+        QuickSort.setComparisonCount(0);
         TimeCounter.stop();
 
         TimeCounter.start();
         System.out.println("QuickSort Last element without dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickLastUnique, 0, wineDataSetQuickLastUnique.length - 1, "last")));
+        System.out.println(QuickSort.getComparisonCount());
+        QuickSort.setComparisonCount(0);
         TimeCounter.stop();
 
         TimeCounter.start();
         System.out.println("QuickSort Random element without dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickRandomUnique, 0, wineDataSetQuickRandomUnique.length - 1, "random")));
+        System.out.println(QuickSort.getComparisonCount());
+        QuickSort.setComparisonCount(0);
         TimeCounter.stop();
 
 
