@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class MergeSort {
 
     private static int mergeCount = 0;
@@ -14,7 +16,6 @@ public class MergeSort {
 
             merge(wineList, left, middle, right);
         }
-
     }
 
     private static void merge(float[] wineList,  int left, int middle, int right) {

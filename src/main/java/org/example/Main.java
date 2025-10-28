@@ -11,12 +11,16 @@ public class Main {
         float[] wineDataSetBubbleSortOptimized = fileHandler.getDataSet(false);
         float[] wineDataSetInsertion = fileHandler.getDataSet(false);
         float[] wineDataSetMerge = fileHandler.getDataSet(false);
-        float[] wineDataSetQuick = fileHandler.getDataSet(false);
+        float[] wineDataSetQuickFirst = fileHandler.getDataSet(false);
+        float[] wineDataSetQuickLast = fileHandler.getDataSet(false);
+        float[] wineDataSetQuickRandom = fileHandler.getDataSet(false);
         float[] wineDataSetBubbleSortUnique = fileHandler.getDataSet(true);
         float[] wineDataSetBubbleSortOptimizedUnique = fileHandler.getDataSet(true);
         float[] wineDataSetInsertionUnique = fileHandler.getDataSet(true);
         float[] wineDataSetMergeUnique = fileHandler.getDataSet(true);
-        float[] wineDataSetQuickUnique = fileHandler.getDataSet(true);
+        float[] wineDataSetQuickFirstUnique = fileHandler.getDataSet(true);
+        float[] wineDataSetQuickLastUnique = fileHandler.getDataSet(true);
+        float[] wineDataSetQuickRandomUnique = fileHandler.getDataSet(true);
         System.out.println("Original array with duplicates:" + Arrays.toString(fileHandler.getDataSet(false)));
         System.out.println("");
 
@@ -46,9 +50,25 @@ public class Main {
         MergeSort.setMergeCount(0);
         TimeCounter.stop();
 
-        //QuickSort optimized version
+        //MergeSort with sorted array
         TimeCounter.start();
-        System.out.println("QuickSort with dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuick, 0, wineDataSetQuick.length - 1, "last")));
+        System.out.println(Arrays.toString(wineDataSetMerge));
+        MergeSort.mergeSort(wineDataSetMerge, 0, wineDataSetMerge.length - 1);
+        System.out.println("MergeSort with dupes: " + Arrays.toString(wineDataSetMerge));
+        System.out.println("Amount of merges: " + MergeSort.getMergeCount());
+        MergeSort.setMergeCount(0);
+        TimeCounter.stop();
+
+        //QuickSort version
+        TimeCounter.start();
+        System.out.println("QuickSort First element with dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickFirst, 0, wineDataSetQuickFirst.length - 1, "first")));
+        TimeCounter.stop();
+
+        TimeCounter.start();
+        System.out.println("QuickSort Last element with dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickLast, 0, wineDataSetQuickLast.length - 1, "last")));
+        TimeCounter.stop();
+        TimeCounter.start();
+        System.out.println("QuickSort Random element with dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickRandom, 0, wineDataSetQuickRandom.length - 1, "random")));
         TimeCounter.stop();
 
         System.out.println("///////////////////////////////////////////////////");
@@ -94,7 +114,15 @@ public class Main {
 
         //QuickSort optimized version
         TimeCounter.start();
-        System.out.println("QuickSort without dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickUnique, 0, wineDataSetQuickUnique.length - 1, "last")));
+        System.out.println("QuickSort First element without dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickFirstUnique, 0, wineDataSetQuickFirstUnique.length - 1, "first")));
+        TimeCounter.stop();
+
+        TimeCounter.start();
+        System.out.println("QuickSort Last element without dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickLastUnique, 0, wineDataSetQuickLastUnique.length - 1, "last")));
+        TimeCounter.stop();
+
+        TimeCounter.start();
+        System.out.println("QuickSort Random element without dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickRandomUnique, 0, wineDataSetQuickRandomUnique.length - 1, "random")));
         TimeCounter.stop();
 
 

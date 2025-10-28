@@ -50,8 +50,31 @@ public class QuickSort {
     }
 
     private static int partitionRandom(float[] wineList, int low, int high) {
+        randomElement(wineList, low, high);
+        float pivot = wineList[high];
+
+        int i = low - 1;
+        for (int j = low; j < high; j++) {
+            if (wineList[j] < pivot) {
+                i++;
+                float temp = wineList[i];
+                wineList[i] = wineList[j];
+                wineList[j] = temp;
+            }
+        }
+        float temp = wineList[i+1];
+        wineList[i+1] = wineList[high];
+        wineList[high] = temp;
+        return i+1;
+    }
+
+    static void randomElement(float[] wineList, int low, int high) {
         Random rand = new Random();
-        int pivot = rand
+        int pivot = rand.nextInt(high - low) + low;
+
+        float temp = wineList[pivot];
+        wineList[pivot] = wineList[high];
+        wineList[high] = temp;
     }
 
     private static void swap(float[] wineList, int i, int j) {
