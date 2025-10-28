@@ -6,8 +6,7 @@ public class MergeSort {
 
     public static void main(String[] args) {}
 
-    public static void mergeSort(float[] wineDataSet, int left, int right) {
-        float[] wineList = Arrays.copyOf(wineDataSet, wineDataSet.length);
+    public static void mergeSort(float[] wineList, int left, int right) {
         if (left < right) {
 
             int middle = left + (right - left) / 2;
@@ -17,6 +16,7 @@ public class MergeSort {
 
             merge(wineList, left, middle, right);
         }
+
     }
 
     private static void merge(float[] wineList,  int left, int middle, int right) {
@@ -28,7 +28,7 @@ public class MergeSort {
         float[] rightArrayList = new float[rightArray];
 
         for (int i = 0; i < leftArray; i++) {
-            leftArrayList[i] = wineList[leftArray + i];
+            leftArrayList[i] = wineList[left + i];
         }
         for (int j = 0; j < rightArray; j++) {
             rightArrayList[j] = wineList[middle + 1 + j];
@@ -60,19 +60,5 @@ public class MergeSort {
             j++;
             k++;
         }
-    }
-
-    public static float[] mergeSortFunction(float[] wineDataSet) {
-        float[] wineList = Arrays.copyOf(wineDataSet, wineDataSet.length);
-        mergeSort(wineList, 0, wineDataSet.length - 1);
-        return wineList;
-    }
-
-    public static void start() {
-        FileHandler fileHandler = new FileHandler();
-        float[] wineDataSet = fileHandler.getDataSet();
-        System.out.println("Original Array: " + Arrays.toString(wineDataSet));
-        mergeSort(wineDataSet, 0, wineDataSet.length - 1);
-        System.out.println("Sorted Array: " + Arrays.toString(wineDataSet));
     }
 }

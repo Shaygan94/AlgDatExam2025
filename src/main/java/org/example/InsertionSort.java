@@ -4,8 +4,7 @@ import java.util.Arrays;
 
 public class InsertionSort {
 
-    public static void insertionSort(float[] wineDataSet) {
-        float[] wineList = Arrays.copyOf(wineDataSet, wineDataSet.length);
+    public static void insertionSort(float[] wineList) {
         for (int i = 1; i < wineList.length; i++) {
             float temp = wineList[i];
             int j = i - 1;
@@ -16,6 +15,5 @@ public class InsertionSort {
             }
             wineList[j + 1] = temp;
         }
-        System.out.println("InsertionSort: " + Arrays.toString(wineList));
     }
 }

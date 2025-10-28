@@ -4,15 +4,14 @@ import java.util.Arrays;
 
 public class QuickSort {
 
-    public static float[] quickSort(float[] wineDataSet, int low, int high) {
-        float wineList[] = Arrays.copyOf(wineDataSet, wineDataSet.length);
+    public static float[] quickSort(float[] wineList, int low, int high) {
         if (low < high) {
             int partitionIndex = partition(wineList, low, high);
 
             quickSort(wineList, low, partitionIndex - 1);
             quickSort(wineList, partitionIndex + 1, high);
         }
-        return wineDataSet;
+        return wineList;
     }
 
     private static int partition(float[] wineList, int low, int high) {
