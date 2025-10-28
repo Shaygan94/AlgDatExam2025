@@ -1,10 +1,8 @@
 package org.example;
 
-import java.util.Arrays;
-
 public class MergeSort {
 
-    public static void main(String[] args) {}
+    private static int mergeCount = 0;
 
     public static void mergeSort(float[] wineList, int left, int right) {
         if (left < right) {
@@ -20,6 +18,7 @@ public class MergeSort {
     }
 
     private static void merge(float[] wineList,  int left, int middle, int right) {
+        mergeCount++;
 
         int leftArray = middle - left + 1;
         int rightArray = right - middle;
@@ -60,5 +59,13 @@ public class MergeSort {
             j++;
             k++;
         }
+    }
+
+    public static int getMergeCount() {
+        return mergeCount;
+    }
+
+    public static void setMergeCount(int mergeCount) {
+        MergeSort.mergeCount = mergeCount;
     }
 }
