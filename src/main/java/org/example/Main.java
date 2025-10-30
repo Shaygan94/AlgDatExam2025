@@ -95,18 +95,20 @@ public class Main {
         BubbleSort.bubbleSortNonOptimized(wineDataSetBubbleSortUnique);
         TimeCounter.stop();
         System.out.println("BubbleSort not optimized without dupes: " + Arrays.toString(wineDataSetBubbleSortUnique));
+        System.out.println("Amount of comparison: " + BubbleSort.comparisonCount);
 
-        //Bubblesort optimized version
         TimeCounter.start();
         BubbleSort.bubbleSortOptimized(wineDataSetBubbleSortOptimizedUnique);
         TimeCounter.stop();
         System.out.println("BubbleSort optimized without dupes: " + Arrays.toString(wineDataSetBubbleSortOptimizedUnique));
+        System.out.println("Amount of comparison: " + BubbleSort.comparisonCount);
 
         //InsertionSort optimized version
         TimeCounter.start();
         InsertionSort.insertionSort(wineDataSetInsertionUnique);
         TimeCounter.stop();
         System.out.println("InsertionSort without dupes: " + Arrays.toString(wineDataSetInsertionUnique));
+        System.out.println("Amount of comparison: " + InsertionSort.comparisonCount);
 
         //MergeSort optimized version
         TimeCounter.start();
