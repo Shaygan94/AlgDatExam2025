@@ -7,6 +7,7 @@ public class TimeCounter {
 
     // Starts the timer
     public static void start() {
+        System.out.println("");
         startTime = System.nanoTime();
     }
 
@@ -16,6 +17,5 @@ public class TimeCounter {
         long durationInNanoseconds = (endTime - startTime) ;
         System.out.println("Duration in nanoseconds: " + durationInNanoseconds);
         //System.out.println("Duration in milliseconds: " + durationInNanoseconds / 1_000_000);
-        System.out.println("");
     }
 }
