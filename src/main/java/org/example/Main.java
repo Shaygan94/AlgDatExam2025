@@ -84,11 +84,13 @@ public class Main {
 
          */
 
+
         System.out.println("///////////////////////////////////////////////////");
         System.out.println("");
         System.out.println("Original array without dupes:" + Arrays.toString(fileHandler.getDataSet(true)));
         System.out.println("Original array size" + fileHandler.getDataSet(true).length);
         System.out.println("");
+
 
         //Bubblesort non optimized version
         TimeCounter.start();
@@ -110,6 +112,7 @@ public class Main {
         System.out.println("InsertionSort without dupes: " + Arrays.toString(wineDataSetInsertionUnique));
         System.out.println("Amount of comparison: " + InsertionSort.comparisonCount);
 
+
         //MergeSort optimized version
         TimeCounter.start();
         MergeSort.mergeSort(wineDataSetMergeUnique, 0, wineDataSetMergeUnique.length - 1);
@@ -117,7 +120,7 @@ public class Main {
         System.out.println("MergeSort without dupes: " + Arrays.toString(wineDataSetMergeUnique));
         System.out.println("Amount of merges: " + MergeSort.getMergeCount());
         MergeSort.setMergeCount(0);
-
+       /*
         //MergeSort already sorted
         TimeCounter.start();
         MergeSort.mergeSort(wineDataSetMergeUnique, 0, wineDataSetMergeUnique.length - 1);
@@ -125,26 +128,31 @@ public class Main {
         System.out.println("MergeSort already sorted array without dupes: " + Arrays.toString(wineDataSetMergeUnique));
         System.out.println("Amount of merges: " + MergeSort.getMergeCount());
         MergeSort.setMergeCount(0);
-
+*/
         //QuickSort optimized version
         TimeCounter.start();
         System.out.println("QuickSort First element without dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickFirstUnique, 0, wineDataSetQuickFirstUnique.length - 1, "first")));
+        System.out.println("First Element Pivots: " + QuickSort.getPivotList());
         TimeCounter.stop();
         System.out.println("How many comparisons: " + QuickSort.getComparisonCount());
         QuickSort.setComparisonCount(0);
+        QuickSort.clearPivotList();
 
         TimeCounter.start();
         System.out.println("QuickSort Last element without dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickLastUnique, 0, wineDataSetQuickLastUnique.length - 1, "last")));
+        System.out.println("Last Element Pivots: " + QuickSort.getPivotList());
         TimeCounter.stop();
         System.out.println("How many comparisons: " + QuickSort.getComparisonCount());
         QuickSort.setComparisonCount(0);
+        QuickSort.clearPivotList();
 
         TimeCounter.start();
         System.out.println("QuickSort Random element without dupes: " + Arrays.toString(QuickSort.quickSort(wineDataSetQuickRandomUnique, 0, wineDataSetQuickRandomUnique.length - 1, "random")));
+        System.out.println("Random Element Pivots: " + QuickSort.getPivotList());
         TimeCounter.stop();
         System.out.println("How many comparisons: " + QuickSort.getComparisonCount());
         QuickSort.setComparisonCount(0);
-
+        QuickSort.clearPivotList();
 
     }
 

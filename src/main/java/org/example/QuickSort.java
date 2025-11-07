@@ -1,10 +1,13 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class QuickSort {
     private static final Random rand = new Random();
     private static int comparisonCount = 0;
+    private static List<Float> pivotList = new ArrayList<>(); //added pivotList ourselves(not geeksforgeeks)
 
     public static float[] quickSort(float[] wineList, int low, int high, String pivot) {
         if (low < high) {
@@ -20,8 +23,15 @@ public class QuickSort {
         return wineList;
     }
 
+    private static void swap(float[] wineList, int i, int j) {
+        float temp = wineList[i];
+        wineList[i] = wineList[j];
+        wineList[j] = temp;
+    }
+
     private static int partitionFirst(float[] wineList, int low, int high) {
         float pivot = wineList[low];
+        pivotList.add(pivot); //added this for listing pivots//not geeksforgeeks
         int i = low;
         for (int j = low + 1; j <= high; j++) {
             comparisonCount++;
@@ -36,7 +46,7 @@ public class QuickSort {
 
     private static int partitionLast(float[] wineList, int low, int high) {
         float pivot = wineList[high];
-
+        pivotList.add(pivot); //added this for listing pivots//not geeksforgeeks
         int i = low - 1;
 
         for (int j = low; j <= high - 1; j++) {
@@ -53,8 +63,8 @@ public class QuickSort {
     private static int partitionRandom(float[] wineList, int low, int high) {
         randomElement(wineList, low, high);
         float pivot = wineList[high];
-
         int i = low - 1;
+        pivotList.add(pivot); //added this for listing pivots//not geeksforgeeks
         for (int j = low; j < high; j++) {
             comparisonCount++;
             if (wineList[j] < pivot) {
@@ -78,11 +88,7 @@ public class QuickSort {
         wineList[high] = temp;
     }
 
-    private static void swap(float[] wineList, int i, int j) {
-        float temp = wineList[i];
-        wineList[i] = wineList[j];
-        wineList[j] = temp;
-    }
+
 
     public static int getComparisonCount() {
         return comparisonCount;
@@ -91,4 +97,16 @@ public class QuickSort {
     public static void setComparisonCount(int comparisonCount) {
         QuickSort.comparisonCount = comparisonCount;
     }
+
+    //not geeksforgeeks
+    public static List<Float> getPivotList() {
+        return pivotList;
+    }
+
+    //not geeksforgeeks
+    public static void clearPivotList() {
+        pivotList.clear();
+    }
+
+
 }
