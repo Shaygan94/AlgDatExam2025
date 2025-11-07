@@ -119,7 +119,9 @@ public class Main {
         TimeCounter.stop();
         System.out.println("MergeSort without dupes: " + Arrays.toString(wineDataSetMergeUnique));
         System.out.println("Amount of merges: " + MergeSort.getMergeCount());
+        System.out.println("Amount of comparisons: " + MergeSort.getComparisonCount());
         MergeSort.setMergeCount(0);
+        MergeSort.setComparisonCount(0);
        /*
         //MergeSort already sorted
         TimeCounter.start();

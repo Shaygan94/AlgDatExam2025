@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class MergeSort {
 
     private static int mergeCount = 0;
+    private static int comparisonCount = 0; // IKKE GEEKSFORGEEKS
 
     public static void mergeSort(float[] wineList, int left, int right) {
         if (left < right) {
@@ -39,6 +40,7 @@ public class MergeSort {
         int k = left;
 
         while (i < leftArray && j < rightArray) {
+            comparisonCount ++; // NY LINJE IKKE GEEKSFORGEEKS
             if (leftArrayList[i] <= rightArrayList[j]) {
                 wineList[k] = leftArrayList[i];
                 i++;
@@ -68,5 +70,14 @@ public class MergeSort {
 
     public static void setMergeCount(int mergeCount) {
         MergeSort.mergeCount = mergeCount;
+    }
+
+    // ↓ IKKE GEEKSFORGEEKS
+    public static int getComparisonCount() {
+        return comparisonCount;
+    }
+     // IKKE GEEKSFORGEEKS
+    public static void setComparisonCount(int comparisonCount) {
+        MergeSort.comparisonCount = comparisonCount;
     }
 }
