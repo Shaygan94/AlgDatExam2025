@@ -7,10 +7,9 @@ Grade Achieved: A 🎉
 
 **Contents:**
 
-Source Code (src/main/) - Java implementations of all sorting algorithms
-Exam Assignment (Data_Structures_and_Algorithms_Exam_2025.pdf) - Original exam questions
-Report (AlgDat2025Report.pdf) - Complete analysis and findings
-Grading Rubric (GradeJustification.png) - Assessment criteria and achieved grade
+**Source Code** (src/main/) - Java implementations of all sorting algorithms
+**Exam Assignment** (Data_Structures_and_Algorithms_Exam_2025.pdf) - Original exam questions Report (AlgDat2025Report.pdf) - Complete analysis and findings
+**Grading Rubric** (GradeJustification.png) - Assessment criteria and achieved grade
 
 **Algorithms Implemented:**
 
