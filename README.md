@@ -1,6 +1,6 @@
-**Data Structures and Algorithms - Exam 2025
+**Data Structures and Algorithms - Exam 2025**
 
-Overview**
+**Overview**
 Implementation and analysis of four fundamental sorting algorithms (Bubble Sort, Insertion Sort, Merge Sort, and Quick Sort) using the Wine Quality Dataset. This project was completed as the final exam for PG4200-H: Data Structures and Algorithms at Kristiania University College.
 Grade Achieved: A 🎉
 
